@@ -104,9 +104,6 @@ Rails.application.routes.draw do
   #CRUD For Recipes
   get("/recipes", { :controller => "recipes", :action => "index" })
   
-  
-  #CRUD For Ingredientss
-  
   #CRUD For Restaurants
   get("/restaurants", { :controller => "restaurants", :action => "index"})
   
