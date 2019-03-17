@@ -1,11 +1,11 @@
 <div class="row mb-3">
   <div class="col-md-12">
     <h1>
-      All restaurants
+      All ingredients
     </h1>
 
-    <a href="/restaurants/new" class="btn btn-block btn-outline-secondary">
-      Add a new restaurant
+    <a href="/ingredients/new" class="btn btn-block btn-outline-secondary">
+      Add a new ingredient
     </a>
   </div>
 </div>
@@ -26,15 +26,7 @@
         </th>
 
         <th>
-          Location
-        </th>
-
-        <th>
           User
-        </th>
-
-        <th>
-          Menu link
         </th>
 
         <th>
@@ -49,37 +41,29 @@
         </th>
       </tr>
 
-      <% @restaurants.each do |restaurant| %>
+      <% @ingredients.each do |ingredient| %>
       <tr>
         <td>
-          <%= restaurant.id %>
+          <%= ingredient.id %>
         </td>
 
         <td>
-          <%= restaurant.name %>
+          <%= ingredient.name %>
         </td>
 
         <td>
-          <%= restaurant.location %>
+          <%= ingredient.user_id %>
         </td>
 
         <td>
-          <%= restaurant.user_id %>
+          <%= time_ago_in_words(ingredient.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(ingredient.updated_at) %> ago
         </td>
 
         <td>
-          <%= restaurant.menu_link %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(restaurant.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(restaurant.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/restaurants/<%= restaurant.id %>">
+          <a href="/ingredients/<%= ingredient.id %>">
             Show details
           </a>
         </td>

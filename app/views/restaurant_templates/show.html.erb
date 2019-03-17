@@ -1,0 +1,72 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Restaurant #<%= @restaurant.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/restaurants" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/restaurants/<%= @restaurant.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit restaurant
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_restaurant/<%= @restaurant.id %>" class="btn btn-block btn-outline-secondary">
+          Delete restaurant
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @restaurant.name %>
+      </dd>
+
+      <dt>
+        Location
+      </dt>
+      <dd>
+        <%= @restaurant.location %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @restaurant.user_id %>
+      </dd>
+
+      <dt>
+        Menu link
+      </dt>
+      <dd>
+        <%= @restaurant.menu_link %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@restaurant.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@restaurant.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

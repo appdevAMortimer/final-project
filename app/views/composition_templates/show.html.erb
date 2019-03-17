@@ -1,0 +1,72 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Composition #<%= @composition.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/compositions" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/compositions/<%= @composition.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit composition
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_composition/<%= @composition.id %>" class="btn btn-block btn-outline-secondary">
+          Delete composition
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Quantity
+      </dt>
+      <dd>
+        <%= @composition.quantity %>
+      </dd>
+
+      <dt>
+        Recipe
+      </dt>
+      <dd>
+        <%= @composition.recipe_id %>
+      </dd>
+
+      <dt>
+        Ingredient
+      </dt>
+      <dd>
+        <%= @composition.ingredient_id %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @composition.user_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@composition.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@composition.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

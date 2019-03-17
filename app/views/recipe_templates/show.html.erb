@@ -1,0 +1,72 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Recipe #<%= @recipe.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/recipes" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/recipes/<%= @recipe.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit recipe
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_recipe/<%= @recipe.id %>" class="btn btn-block btn-outline-secondary">
+          Delete recipe
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <dd>
+        <%= @recipe.title %>
+      </dd>
+
+      <dt>
+        Instructions
+      </dt>
+      <dd>
+        <%= @recipe.instructions %>
+      </dd>
+
+      <dt>
+        Calories per serving
+      </dt>
+      <dd>
+        <%= @recipe.calories_per_serving %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @recipe.user_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@recipe.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@recipe.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

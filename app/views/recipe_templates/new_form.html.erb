@@ -1,0 +1,51 @@
+<h1>
+  Add a new recipe
+</h1>
+
+
+<hr>
+
+<form action="/create_recipe" method="post">
+
+  <div class="form-group">
+    <label for="title">
+      Title
+    </label>
+
+    <input type="text" id="title" name="title" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="instructions">
+      Instructions
+    </label>
+
+    <input type="text" id="instructions" name="instructions" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="calories_per_serving">
+      Calories per serving
+    </label>
+
+    <input type="text" id="calories_per_serving" name="calories_per_serving" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create recipe
+  </button>
+</form>
+
+<hr>
+
+<a href="/recipes">
+  Go back
+</a>
