@@ -19,7 +19,7 @@
       <%Composition.where(recipe_id: @recipe.id).each do |comp|%>
         <li><%=comp.quantity%> <%=Ingredient.find(comp.ingredient_id).name%> 
         <a href="/compositions/<%=comp.id%>/edit">Edit</a> <a href="/delete_composition/<%=comp.id%>">Delete</a>
-        </li>
+        </li> 
       <%end%>
     </ul>
   </div>

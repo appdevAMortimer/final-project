@@ -1,7 +1,7 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h1>
-      Recipe #<%= @recipe.id %> details
+      <%= @recipe.title %>
     </h1>
 
     <div class="row mb-3">
@@ -37,7 +37,7 @@
       <dd>
         <ul>
           <% Composition.where(:recipe_id => @recipe.id).each do |composition|%>
-            <li><%=composition.quantity %> <%=Ingredient.find(composition.ingredient_id).name %></li>
+            <li><%=composition.quantity %> <%=composition.unit_of_measure %> <%=Ingredient.find(composition.ingredient_id).name %></li>
           <%end%>
         </ul>
       </dd>
@@ -56,13 +56,6 @@
       </dd>
 
       <dt>
-        User
-      </dt>
-      <dd>
-        <%= @recipe.user_id %>
-      </dd>
-
-      <dt>
         Created at
       </dt>
       <dd>
@@ -78,9 +71,9 @@
     </dl>
     <br>
     <br>
-    <h1>
+    <h3>
   Add an ingredient and quantity
-</h1>
+</h3>
 
 
 <hr>
