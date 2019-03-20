@@ -1,5 +1,5 @@
 <h1>
-  Edit recipe #<%= @recipe.id %>
+  Edit <%= @recipe.title %>
 </h1>
 
 <hr>
@@ -17,7 +17,7 @@
     <label for= "ingredient composition">Ingredient Composition</label>
     <ul>
       <%Composition.where(recipe_id: @recipe.id).each do |comp|%>
-        <li><%=comp.quantity%> <%=Ingredient.find(comp.ingredient_id).name%> 
+        <li><%=comp.quantity%> <%=comp.unit_of_measure %> <%=Ingredient.find(comp.ingredient_id).name%> 
         <a href="/compositions/<%=comp.id%>/edit">Edit</a> <a href="/delete_composition/<%=comp.id%>">Delete</a>
         </li> 
       <%end%>
@@ -38,7 +38,7 @@
 
     <input type="text" id="calories_per_serving" name="calories_per_serving" class="form-control" value="<%= @recipe.calories_per_serving %>">
   </div>
-    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @recipe.user_id %>">
+    <input type="hidden" id="user_id" name="user_id"value="<%= @recipe.user_id %>">
 
 
   <button class="btn btn-block btn-outline-secondary">

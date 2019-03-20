@@ -12,6 +12,9 @@
 class Ingredient < ApplicationRecord
     validates :name, presence: true
     validates :user_id, presence: true
+    validates :name, uniqueness: {
+        message: "name must be unique"
+    }
     has_many :compositions, :dependent => :destroy
     belongs_to :user
     has_many :recipes, :through => :compositions, :source => :recipe
