@@ -31,7 +31,16 @@
       <dd>
         <%= @recipe.title %>
       </dd>
-
+      <dt>
+        Ingredient Composition
+      </dt>
+      <dd>
+        <ul>
+          <% Composition.where(:recipe_id => @recipe.id).each do |composition|%>
+            <li><%=composition.quantity %> <%=Ingredient.find(composition.ingredient_id).name %></li>
+          <%end%>
+        </ul>
+      </dd>
       <dt>
         Instructions
       </dt>
@@ -67,6 +76,45 @@
         <%= time_ago_in_words(@recipe.updated_at) %> ago
       </dd>
     </dl>
+    <br>
+    <br>
+    <h1>
+  Add an ingredient and quantity
+</h1>
+
+
+<hr>
+<form action="/create_composition" method="post">
+
+  <div class="form-group">
+    <label for="quantity">
+      Quantity
+    </label>
+    <input type="text" id="quantity" name="quantity" class="form-control">
+  </div>
+    <input type="hidden" id="recipe_id" name="recipe_id" value="<%= @recipe.id  %>">
+  <div class="form-group">
+    <label for="ingredient_id">
+      Ingredient
+    </label>
+    <%= select_tag("ingredient_id", options_from_collection_for_select(Ingredient.all, :id, :name), :class => "form-control") %>
+    or <a href="/ingredients/new">Add a new ingredient.</a>
+  </div>
+  <input type="hidden" id="user_id" name="user_id" value="<%= current_user.id %>">
+  <input type="hidden" id="recipe_id" name="recipe_id" value="<%= @recipe.id %>">
+  <button class="btn btn-block btn-outline-secondary">
+    Add recipe composition
+  </button>
+</form>
+
+<hr>
+
+<a href="/compositions">
+  Go back
+</a>
+
   </div>
 </div>
+
+
 

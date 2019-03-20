@@ -3,6 +3,9 @@
     <h1>
       All recipes
     </h1>
+    <h2>
+      <a class="btn btn-primary" href="/">Planner</a>
+    </h2>
 
     <a href="/recipes/new" class="btn btn-block btn-outline-secondary">
       Add a new recipe
@@ -24,17 +27,8 @@
         <th>
           Title
         </th>
-
-        <th>
-          Instructions
-        </th>
-
         <th>
           Calories per serving
-        </th>
-
-        <th>
-          User
         </th>
 
         <th>
@@ -58,19 +52,9 @@
         <td>
           <%= recipe.title %>
         </td>
-
-        <td>
-          <%= recipe.instructions %>
-        </td>
-
         <td>
           <%= recipe.calories_per_serving %>
         </td>
-
-        <td>
-          <%= recipe.user_id %>
-        </td>
-
         <td>
           <%= time_ago_in_words(recipe.created_at) %> ago
         </td>

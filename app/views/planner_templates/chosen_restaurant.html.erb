@@ -6,7 +6,7 @@
         <h1>We Found You a Restaurant!</h1>
     </div>
     <div class="row justify-content-center pb-5 h-25">
-        <h2>Tonight, you are going to eat at <a href="http://www.veggiediner.com/menus/">Chicago Diner.</a></h2>
+        <h2>Tonight, you are going to eat at <a href="<%=@choice.menu_link%>"><%= @choice.name  %></a></h2>
     </div>
     <div class="row justify-content-center pb-5 h-25">
         <p>I'm not into it. I'd rather <a class="btn btn-secondary" href="/pick_restaurant">pick another restaurant</a> or <a class="btn btn-secondary" href="/restaurants">browse my restaurants.</a></p>
