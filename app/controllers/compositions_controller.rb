@@ -53,6 +53,6 @@ class CompositionsController < ApplicationController
 
     @composition.destroy
 
-    redirect_back(:notice => "Composition deleted successfully.")
+    redirect_to("/recipes/#{@composition.recipe_id}/edit", :notice => "Composition deleted successfully.")
   end
 end
