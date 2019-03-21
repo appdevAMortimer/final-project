@@ -1,5 +1,5 @@
 <h1>
-  Edit restaurant #<%= @restaurant.id %>
+  Edit <%= @restaurant.name %>
 </h1>
 
 <hr>
@@ -21,13 +21,7 @@
 
     <input type="text" id="location" name="location" class="form-control" value="<%= @restaurant.location %>">
   </div>
-
-  <div class="form-group">
-    <label for="user_id">
-      User
-    </label>
-
-    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @restaurant.user_id %>">
+    <input type="hidden" id="user_id" name="user_id" value="<%= @restaurant.user_id %>">
   </div>
 
   <div class="form-group">

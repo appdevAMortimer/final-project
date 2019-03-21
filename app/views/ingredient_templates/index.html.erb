@@ -3,7 +3,7 @@
     <h1>
       All ingredients
     </h1>
-
+    <a href="/" class="btn btn-primary">Planner</a>
     <a href="/ingredients/new" class="btn btn-block btn-outline-secondary">
       Add a new ingredient
     </a>
@@ -24,11 +24,6 @@
         <th>
           Name
         </th>
-
-        <th>
-          User
-        </th>
-
         <th>
           Created at
         </th>
@@ -50,11 +45,6 @@
         <td>
           <%= ingredient.name %>
         </td>
-
-        <td>
-          <%= ingredient.user_id %>
-        </td>
-
         <td>
           <%= time_ago_in_words(ingredient.created_at) %> ago
         </td>

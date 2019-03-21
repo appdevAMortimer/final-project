@@ -27,15 +27,12 @@
     <label for="instructions">
       Instructions
     </label>
-
     <input type="text" id="instructions" name="instructions" class="form-control" value="<%= @recipe.instructions %>">
   </div>
-
   <div class="form-group">
     <label for="calories_per_serving">
       Calories per serving
     </label>
-
     <input type="text" id="calories_per_serving" name="calories_per_serving" class="form-control" value="<%= @recipe.calories_per_serving %>">
   </div>
     <input type="hidden" id="user_id" name="user_id"value="<%= @recipe.user_id %>">

@@ -45,7 +45,7 @@
         Instructions
       </dt>
       <dd>
-        <%= @recipe.instructions %>
+        <%= (@recipe.instructions).each_line("."){|s| p s} %>
       </dd>
 
       <dt>
@@ -113,13 +113,6 @@
     Add recipe composition
   </button>
 </form>
-
-<hr>
-
-<a href="/compositions">
-  Go back
-</a>
-
   </div>
 </div>
 
