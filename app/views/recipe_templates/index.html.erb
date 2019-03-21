@@ -3,10 +3,6 @@
     <h1>
       All recipes
     </h1>
-    <h2>
-      <a class="btn btn-primary" href="/">Planner</a>
-    </h2>
-
     <a href="/recipes/new" class="btn btn-block btn-outline-secondary">
       Add a new recipe
     </a>
@@ -20,10 +16,6 @@
   <div class="col-md-12">
     <table class="table">
       <tr>
-        <th>
-          ID
-        </th>
-
         <th>
           Title
         </th>
@@ -45,10 +37,6 @@
 
       <% @recipes.each do |recipe| %>
       <tr>
-        <td>
-          <%= recipe.id %>
-        </td>
-
         <td>
           <%= recipe.title %>
         </td>

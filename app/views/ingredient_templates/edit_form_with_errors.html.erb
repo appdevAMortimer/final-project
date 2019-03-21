@@ -22,13 +22,7 @@
     <input type="text" id="name" name="name" class="form-control" value="<%= @ingredient.name %>">
   </div>
 
-  <div class="form-group">
-    <label for="user_id">
-      User
-    </label>
-
-    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @ingredient.user_id %>">
-  </div>
+    <input type="hidden" id="user_id" name="user_id" class="form-control" value="<%= @ingredient.user_id %>">
 
   <button class="btn btn-block btn-outline-secondary">
     Update ingredient

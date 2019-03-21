@@ -37,14 +37,8 @@
 
     <input type="text" id="calories_per_serving" name="calories_per_serving" class="form-control" value="<%= @recipe.calories_per_serving %>">
   </div>
+    <input type="hidden" id="user_id" name="user_id" class="form-control" value="<%= @recipe.user_id %>">
 
-  <div class="form-group">
-    <label for="user_id">
-      User
-    </label>
-
-    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @recipe.user_id %>">
-  </div>
 
   <button class="btn btn-block btn-outline-secondary">
     Update recipe

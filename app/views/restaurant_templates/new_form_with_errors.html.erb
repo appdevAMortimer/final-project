@@ -34,14 +34,7 @@
     <input type="text" id="location" name="location" class="form-control" value="<%= @restaurant.location %>">
   </div>
 
-  <div class="form-group">
-    <label for="user_id">
-      User
-    </label>
-
-    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @restaurant.user_id %>">
-  </div>
-
+    <input type="hidden" id="user_id" name="user_id" class="form-control" value="<%= @restaurant.user_id %>">
   <div class="form-group">
     <label for="menu_link">
       Menu link

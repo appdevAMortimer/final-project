@@ -26,7 +26,7 @@ class IngredientsController < ApplicationController
     if @ingredient.valid?
       @ingredient.save
 
-      redirect_back(:fallback_location => "/ingredients", :notice => "Ingredient created successfully.")
+      redirect_to("/ingredients", :notice => "Ingredient created successfully.")
     else
       render("ingredient_templates/new_form_with_errors.html.erb")
     end
