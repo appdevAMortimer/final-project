@@ -24,9 +24,6 @@ Rails.application.routes.draw do
   get("/compositions/new", { :controller => "compositions", :action => "new_form" })
   post("/create_composition", { :controller => "compositions", :action => "create_row" })
 
-  # READ
-  get("/compositions", { :controller => "compositions", :action => "index" })
-  get("/compositions/:id_to_display", { :controller => "compositions", :action => "show" })
 
   # UPDATE
   get("/compositions/:prefill_with_id/edit", { :controller => "compositions", :action => "edit_form" })
