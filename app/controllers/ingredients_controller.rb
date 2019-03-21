@@ -1,7 +1,6 @@
 class IngredientsController < ApplicationController
   def index
-    @ingredients = Ingredient.all
-
+    @ingredients = Ingredient.where(:user_id => current_user.id)
     render("ingredient_templates/index.html.erb")
   end
 

@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.all
+    @contacts = Contact.where(:user_id => current_user.id)
 
     render("contact_templates/index.html.erb")
   end

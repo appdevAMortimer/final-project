@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.where(:user_id => current_user.id)
 
     render("restaurant_templates/index.html.erb")
   end

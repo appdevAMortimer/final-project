@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.where(:user_id => current_user.id)
 
     render("recipe_templates/index.html.erb")
   end
