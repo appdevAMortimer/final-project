@@ -77,7 +77,7 @@
       Ingredient
     </label>
     <%= select_tag("ingredient_id", options_from_collection_for_select(Ingredient.all, :id, :name), :class => "form-control") %>
-    or <a href="/ingredients/new">Add a new ingredient.</a>
+    or <a href="/ingredients/new?recipe_id=<%=@recipe.id%>">Add a new ingredient.</a>
   </div>
   <input type="hidden" id="user_id" name="user_id" value="<%= current_user.id %>">
   <input type="hidden" id="recipe_id" name="recipe_id" value="<%= @recipe.id %>">

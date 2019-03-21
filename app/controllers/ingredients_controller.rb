@@ -12,20 +12,20 @@ class IngredientsController < ApplicationController
 
   def new_form
     @ingredient = Ingredient.new
-
+      @recipe = params.fetch("recipe_id")
     render("ingredient_templates/new_form.html.erb")
   end
 
   def create_row
     @ingredient = Ingredient.new
-
     @ingredient.name = params.fetch("name")
     @ingredient.user_id = params.fetch("user_id")
+    @id = params.fetch("recipe_id")
 
     if @ingredient.valid?
       @ingredient.save
 
-      redirect_to("/ingredients", :notice => "Ingredient created successfully.")
+      redirect_to("/recipes/#{@id}/edit", :notice => "Ingredient created successfully.")
     else
       render("ingredient_templates/new_form_with_errors.html.erb")
     end

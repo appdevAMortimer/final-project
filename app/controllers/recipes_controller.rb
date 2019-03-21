@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
     if @recipe.valid?
       @recipe.save
 
-      redirect_back(:fallback_location => "/recipes", :notice => "Recipe created successfully.")
+      redirect_to("/recipes", :notice => "Recipe created successfully.")
     else
       render("recipe_templates/new_form_with_errors.html.erb")
     end
