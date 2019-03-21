@@ -32,9 +32,9 @@
     <label for="ingredient_id">
       Ingredient
     </label>
-
-    <input type="text" id="ingredient_id" name="ingredient_id" class="form-control" value="<%= @composition.ingredient_id %>">
-  </div>
+    <%= select_tag("ingredient_id", options_from_collection_for_select(Ingredient.all, :id, :name), :class => "form-control") %>
+    or <a href="/ingredients/new">Add a new ingredient.</a>
+    </div>
     <input type="hidden" id="user_id" name="user_id" value="<%= @composition.user_id %>">
 
   <button class="btn btn-block btn-outline-secondary">
@@ -44,6 +44,6 @@
 
 <hr>
 
-<a href="/compositions">
+<a href="/recipes/<%=@composition.recipe_id%>/edit">
   Go back
 </a>

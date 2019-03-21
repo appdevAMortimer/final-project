@@ -18,7 +18,7 @@ class CompositionsController < ApplicationController
     if @composition.valid?
       @composition.save
 
-      redirect_back(:fallback_location => "/compositions", :notice => "Composition created successfully.")
+      redirect_back(:fallback_location => "/", :notice => "Composition created successfully.")
     else
       render("composition_templates/new_form_with_errors.html.erb")
     end
@@ -42,7 +42,7 @@ class CompositionsController < ApplicationController
     if @composition.valid?
       @composition.save
 
-      redirect_to("/recipes/#{@composition.recipe_id}", :notice => "Composition updated successfully.")
+      redirect_to("/recipes/#{@composition.recipe_id}/edit", :notice => "Composition updated successfully.")
     else
       render("composition_templates/edit_form_with_errors.html.erb")
     end
