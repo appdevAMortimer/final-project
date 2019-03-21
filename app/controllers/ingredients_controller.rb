@@ -1,8 +1,5 @@
 class IngredientsController < ApplicationController
-  def index
-    @ingredients = Ingredient.where(:user_id => current_user.id)
-    render("ingredient_templates/index.html.erb")
-  end
+
 
   def show
     @ingredient = Ingredient.find(params.fetch("id_to_display"))

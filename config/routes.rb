@@ -41,8 +41,7 @@ Rails.application.routes.draw do
   get("/ingredients/new", { :controller => "ingredients", :action => "new_form" })
   post("/create_ingredient", { :controller => "ingredients", :action => "create_row" })
 
-  # READ
-  get("/ingredients", { :controller => "ingredients", :action => "index" })
+
   get("/ingredients/:id_to_display", { :controller => "ingredients", :action => "show" })
 
   # UPDATE
